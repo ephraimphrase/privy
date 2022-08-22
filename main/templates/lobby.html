@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 min-vh-100 pt-5">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="{% static 'images/logo.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="row mt-5 pt-5">
+                                <h1 class="fw-bold display-3">Chatrooms for <br> <span>private</span> gists <span><img class="img-fluid" src="{% static 'images/emoji.png' %}" alt=""></span></h1>
+                            </div>
+                            <div class="row mt-4">
+                                <h6 class="">Privy makes it easy to spend quality time with friends, loved ones <br> and chat securely as well as leaving no chat trace behind</h6>
+                            </div>
+                            <div class="row mt-3">
+                                <form action="{% url 'checkRoom' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <div class="card shadow">
+                                                <div class="card-body d-flex">
+                                                    <input type="text" class="form-control border-0 border-end" placeholder="Enter room name" name="roomname">
+                                                    <input type="text" class="form-control border-0" placeholder="Chat name" name="chatname">
+                                                    <button class="btn w-50 text-white submit" type="submit">Let's Gist</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row">
+                                <h6 style="color: #0E393A;" class="small mt-3">Just keep it short and simple</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-none d-md-block min-vh-100 aside">
+            <div class="container  mt-5 p-4">
+                <div class="row mt-4 p-4">
+                    <div class="col-md-2">
+                        <div style="background-color: rgba(255, 136, 69, 0.21);" class="rounded-circle p-4"></div>
+                    </div>
+                    <div class="col-md-10">
+                        <div style="background-color: rgba(255, 255, 255, 0.5);;" class="p-2 w-100 rounded"></div>
+                        <div style="background-color: rgba(255, 255, 255, 0.5);;" class="p-2 mt-2 w-50 rounded"></div>
+                    </div>
+                </div>
+                <div class="row mt-5 p-4">
+                    <div class="col-md-2">
+                        <div style="background-color: rgba(255, 136, 69, 0.21);" class="rounded-circle p-4"></div>
+                    </div>
+                    <div class="col-md-10">
+                        <div style="background-color: rgba(255, 255, 255, 0.5);;" class="rounded p-2 mt-3 w-75"></div>
+                    </div>
+                </div>
+                <div class="row mt-5 p-4">
+                    <div class="col-md-10 d-flex flex-column justify-content-end align-items-end">
+                        <div style="background-color: rgba(255, 255, 255, 0.5);;" class="rounded p-2 mt-2 w-100"></div>
+                        <div style="background-color: rgba(255, 255, 255, 0.5);;" class="p-2 mt-2 w-50 rounded"></div>
+                    </div>
+                    <div class="col-md-2">
+                        <div style="background-color: rgba(255, 136, 69, 0.21);" class="rounded-circle p-4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-5">
+                <div class="row download rounded text-center py-3">
+                    <h5 class="text-white fw-bold fs-5">Low on mobile apps? Download it now</h5>
+                    <div class="container mt-3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="img-fluid" src="{% static 'images/image.png' %}" alt="">
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="img-fluid" src="{% static 'images/app.png' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
